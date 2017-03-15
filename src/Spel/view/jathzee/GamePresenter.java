@@ -4,7 +4,6 @@ import Spel.model.Combinaties;
 import Spel.model.DobbelsteenModel;
 import javafx.collections.FXCollections;
 import javafx.event.EventHandler;
-import javafx.scene.CacheHint;
 import javafx.scene.Node;
 import javafx.scene.control.TableRow;
 import javafx.scene.image.Image;
@@ -49,7 +48,7 @@ public class GamePresenter {
                     }
                     row.setOnMouseClicked(event1 -> {
                     if(row.isSelected()){
-                        view.g;
+
                     }
                     });
                 }
@@ -77,6 +76,9 @@ public class GamePresenter {
                 int chanche = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.CHANCHE) ? ones+twos+threes+fours+fives+sixes : 0;
                 int yahtzee = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.YAHTZEE) ? 50 : 0;
                 int nul = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.NULL) ? 0 : 0;
+
+                int punten = 0;
+
 
                 int total = ones + twos + threes + fours + fives + sixes + threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + chanche + yahtzee;
                 model.setScore(model.getScore()+total);
