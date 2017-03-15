@@ -16,6 +16,7 @@ public class OptionsView extends VBox {
     private Button helderheidsButton;
 
 
+
     public OptionsView() {
         InitialiseNodes();
         Layoutnodes();
@@ -25,6 +26,7 @@ public class OptionsView extends VBox {
     private void InitialiseNodes() {
         geluidsButton = new Button("Geluid");
         helderheidsButton = new Button("Helderheid");
+
 
     }
 

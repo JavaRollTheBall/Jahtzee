@@ -1,5 +1,8 @@
 package Spel.view.jathzee;
 
+import Spel.model.Combinaties;
+import Spel.model.Dobbelsteen;
+import Spel.model.DobbelsteenModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -28,17 +31,20 @@ public class GameView extends BorderPane{
     private Label resterendeWorpen;
 
     private TableView<TableData> table;
+    private Button[] tableButtons;
 
 
     public static class TableData {
         private final SimpleStringProperty comment;
         private final SimpleStringProperty player1;
         private final SimpleStringProperty player2;
+        private final Button button;
 
-        public TableData(String comment, String player1, String player2) {
+        public TableData(String comment, String player1, String player2, Button button) {
             this.comment = new SimpleStringProperty(comment);
             this.player1 = new SimpleStringProperty(player1);
             this.player2 = new SimpleStringProperty(player2);
+            this.button = button;
         }
 
         public String getComment() {
@@ -61,12 +67,13 @@ public class GameView extends BorderPane{
             return player2.get();
         }
 
-
         public void setPlayer2(String player2) {
             this.player2.set(player2);
         }
 
-
+        public Button getButton() {
+            return button;
+        }
     }
 
     public GameView() {
@@ -88,6 +95,37 @@ public class GameView extends BorderPane{
             selectedDobbelImageViews[i] = new ImageView();
         }
         resterendeWorpen = new Label();
+        tableButtons = new Button[17];
+        int i = 0;
+        for(String d : new String[] {
+                "ones",
+                "twos",
+                "threes",
+                "fours",
+                "fives",
+                "sixes",
+                "sum",
+                "bonus",
+                "threeofakind",
+                "fourofakind",
+                "fullhouse",
+                "smallstraight",
+                "bigstraight",
+                "chanche",
+                "total"
+        }) {
+            Button b = new Button("Kiezen");
+            b.setOnMouseClicked(event -> {
+                int ogen[] = DobbelsteenModel.dobbelStenenToIntArray();
+                if(d.equals("ones")) {
+                    System.out.println(ogen[0]);
+                }else{
+                    System.out.println(ogen[1]);
+                }
+            });
+            tableButtons[i] = b;
+            i++;
+        }
     }
 
     private void layoutNodes() {
@@ -113,26 +151,28 @@ public class GameView extends BorderPane{
         TableColumn speler1Col = new TableColumn("Speler 1");
         speler1Col.setCellValueFactory(new PropertyValueFactory<>("player1"));
         TableColumn speler2Col = new TableColumn("Speler 2");
-        speler1Col.setCellValueFactory(new PropertyValueFactory<>("player2"));
+        speler2Col.setCellValueFactory(new PropertyValueFactory<>("player2"));
+        TableColumn buttonCol = new TableColumn("");
+        buttonCol.setCellValueFactory(new PropertyValueFactory<>("button"));
         setTableData(FXCollections.observableArrayList(
-                new TableData("Ones", "0", "0"),
-                new TableData("Twos", "0", "0"),
-                new TableData("Threes", "0", "0"),
-                new TableData("Fours", "0", "0"),
-                new TableData("Fives", "0", "0"),
-                new TableData("Sixes", "0", "0"),
-                new TableData("Sum", "0", "0"),
-                new TableData("Bonus", "0", "0"),
-                new TableData("Three of a kind", "0", "0"),
-                new TableData("Four of a kind", "0", "0"),
-                new TableData("Full house", "0", "0"),
-                new TableData("Small straight", "0", "0"),
-                new TableData("Large straight", "0", "0"),
-                new TableData("Chanche", "0", "0"),
-                new TableData("Yahtzee", "0", "0"),
-                new TableData("Total", "0", "0")
+                new TableData("Ones", "0", "0", tableButtons[0]),
+                new TableData("Twos", "0", "0", tableButtons[1]),
+                new TableData("Threes", "0", "0", tableButtons[2]),
+                new TableData("Fours", "0", "0", tableButtons[3]),
+                new TableData("Fives", "0", "0", tableButtons[4]),
+                new TableData("Sixes", "0", "0", tableButtons[5]),
+                new TableData("Sum", "0", "0", tableButtons[6]),
+                new TableData("Bonus", "0", "0", tableButtons[7]),
+                new TableData("Three of a kind", "0", "0", tableButtons[8]),
+                new TableData("Four of a kind", "0", "0", tableButtons[9]),
+                new TableData("Full house", "0", "0", tableButtons[10]),
+                new TableData("Small straight", "0", "0", tableButtons[11]),
+                new TableData("Large straight", "0", "0", tableButtons[12]),
+                new TableData("Chanche", "0", "0", tableButtons[13]),
+                new TableData("Yahtzee", "0", "0", tableButtons[14]),
+                new TableData("Total", "0", "0", tableButtons[15])
         ));
-        table.getColumns().addAll(commentCol, speler1Col, speler2Col);
+        table.getColumns().addAll(commentCol, speler1Col, speler2Col, buttonCol);
 
         final HBox hbox = new HBox();
         hbox.setSpacing(5);
