@@ -68,6 +68,9 @@ public class GamePresenter {
                 int fours = Combinaties.aantallen(ogen)[3]*4;
                 int fives = Combinaties.aantallen(ogen)[4]*5;
                 int sixes = Combinaties.aantallen(ogen)[5]*6;
+                int bovenste = ones + twos + threes + fours + fives + sixes;
+                int bonus = 0;
+                int sum = bovenste + bonus;
                 int threeOfAKind = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.THREE_OF_A_KIND) ? ones+twos+threes+fours+fives+sixes : 0;
                 int fourOfAKind = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.FOUR_OF_A_KIND) ? ones+twos+threes+fours+fives+sixes : 0;
                 int fullHouse = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.FULL_HOUSE) ? 25 : 0;
@@ -75,12 +78,14 @@ public class GamePresenter {
                 int largeStraight = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.BIG_STRAIGHT) ? 40 : 0;
                 int chanche = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.CHANCHE) ? ones+twos+threes+fours+fives+sixes : 0;
                 int yahtzee = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.YAHTZEE) ? 50 : 0;
+                int ondertste =  threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + chanche + yahtzee;
+                int total = bovenste + ondertste;
                 int nul = Combinaties.find(model.getDobbelstenen()).equals(Combinaties.CombinatieNaam.NULL) ? 0 : 0;
 
-                int punten = 0;
+if (bovenste >= 35) {
+    bonus += 10;
+}
 
-
-                int total = ones + twos + threes + fours + fives + sixes + threeOfAKind + fourOfAKind + fullHouse + smallStraight + largeStraight + chanche + yahtzee;
                 model.setScore(model.getScore()+total);
                 System.out.println("dfdsfds");
                 view.setTableData(FXCollections.observableArrayList(
