@@ -47,7 +47,11 @@ public class GamePresenter {
                         // clicking on text part
                         row = (TableRow) node.getParent();
                     }
-                    System.out.println((GameView.TableData)(row.getItem()));
+                    row.setOnMouseClicked(event1 -> {
+                    if(row.isSelected()){
+                        view.g;
+                    }
+                    });
                 }
             }
 

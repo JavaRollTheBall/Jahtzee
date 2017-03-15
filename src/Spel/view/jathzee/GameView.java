@@ -28,6 +28,7 @@ public class GameView extends BorderPane{
 
     private TableView<TableData> table;
 
+
     public static class TableData {
         private final SimpleStringProperty comment;
         private final SimpleStringProperty player1;
@@ -63,6 +64,8 @@ public class GameView extends BorderPane{
         public void setPlayer2(String player2) {
             this.player2.set(player2);
         }
+
+
     }
 
     public GameView() {
