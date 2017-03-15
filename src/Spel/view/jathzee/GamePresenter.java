@@ -118,29 +118,29 @@ public class GamePresenter {
                         new GameView.TableData("Ones", "1", "0", new Button("Kiezen")),
                         new GameView.TableData("Twos", "2", "0", new Button("Kiezen")),
                         new GameView.TableData("Threes", "3", "0", new Button("Kiezen")),
-                        new GameView.TableData("Fours", "12", "0", new Button("Kiezen")),
+                        new GameView.TableData("Fours", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
-                        new GameView.TableData("Sixes", "0", "0", new Button("Kiezen")),
-                        new GameView.TableData("Sum", "6", "0", new Button("Kiezen")),
+                        new GameView.TableData("Sixes", "12", "0", new Button("Kiezen")),
+                        new GameView.TableData("Sum", "5", "0", new Button("Kiezen")),
                         new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Three of a kind", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Full house", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
-                        new GameView.TableData("Chanche", "", "16", new Button("Kiezen")),
+                        new GameView.TableData("Chanche", "16", "0", new Button("Kiezen")),
                         new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
                         new GameView.TableData("Total", "12", "0", new Button("Kiezen"))
                 ));
             });
             view.setTableData(FXCollections.observableArrayList(
-                    new GameView.TableData("Ones", "1", "0", new Button("Kiezen")),
+                    new GameView.TableData("Ones", "29000", "0", new Button("Kiezen")),
                     new GameView.TableData("Twos", "2", "0", new Button("Kiezen")),
                     new GameView.TableData("Threes", "3", "0", new Button("Kiezen")),
                     new GameView.TableData("Fours", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Sixes", "12", "0", new Button("Kiezen")),
-                    new GameView.TableData("Sum", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sum", "5", "0", new Button("Kiezen")),
                     new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Three of a kind", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
@@ -152,67 +152,90 @@ public class GamePresenter {
                     new GameView.TableData("Total", "12", "0", new Button("Kiezen"))
             ));
         }else if(DobbelsteenModel.count == 1) {
-            model.setScore(18);
+            model.setScore(12);
             view.setTableData(FXCollections.observableArrayList(
-                    new GameView.TableData("Ones", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Ones", "1", "0", new Button("Kiezen")),
                     new GameView.TableData("Twos", "2", "0", new Button("Kiezen")),
-                    new GameView.TableData("Threes", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Threes", "3", "0", new Button("Kiezen")),
                     new GameView.TableData("Fours", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Sixes", "12", "0", new Button("Kiezen")),
-                    new GameView.TableData("Sum", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sum", "12", "0", new Button("Kiezen")),
                     new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Three of a kind", "21", "0", new Button("Kiezen")),
+                    new GameView.TableData("Three of a kind", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Full house", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Chanche", "21", "0", new Button("Kiezen")),
+                    new GameView.TableData("Chanche", "16", "0", new Button("Kiezen")),
                     new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Total", "18", "0", new Button("Kiezen"))
+                    new GameView.TableData("Total", "12", "0", new Button("Kiezen"))
             ));
 
-        view.setTableData(FXCollections.observableArrayList(
-                new GameView.TableData("Ones", "1", "0", new Button("Kiezen")),
-                new GameView.TableData("Twos", "2", "0", new Button("Kiezen")),
-                new GameView.TableData("Threes", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Fours", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Sixes", "18", "0", new Button("Kiezen")),
-                new GameView.TableData("Sum", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Three of a kind", "21", "0", new Button("Kiezen")),
-                new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Full house", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Chanche", "21", "0", new Button("Kiezen")),
-                new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
-                new GameView.TableData("Total", "18", "0", new Button("Kiezen"))
-        ));
+
         }else if(DobbelsteenModel.count == 2 ){
             model.setScore(18);
             view.setTableData(FXCollections.observableArrayList(
                     new GameView.TableData("Ones", "1", "0", new Button("Kiezen")),
                     new GameView.TableData("Twos", "2", "0", new Button("Kiezen")),
-                    new GameView.TableData("Threes", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Threes", "3", "0", new Button("Kiezen")),
                     new GameView.TableData("Fours", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Sixes", "18", "0", new Button("Kiezen")),
-                    new GameView.TableData("Sum", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sixes", "12", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sum", "12", "0", new Button("Kiezen")),
                     new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Three of a kind", "21", "0", new Button("Kiezen")),
+                    new GameView.TableData("Three of a kind", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Full house", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
                     new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Chanche", "21", "0", new Button("Kiezen")),
+                    new GameView.TableData("Chanche", "16", "0", new Button("Kiezen")),
                     new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
-                    new GameView.TableData("Total", "18", "0", new Button("Kiezen"))
+                    new GameView.TableData("Total", "12", "0", new Button("Kiezen"))
             ));
         }else if(DobbelsteenModel.count == 3 ){
 
+            model.setScore(18);
+            view.setTableData(FXCollections.observableArrayList(
+                    new GameView.TableData("Ones", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Twos", "4", "0", new Button("Kiezen")),
+                    new GameView.TableData("Threes", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Fours", "12", "0", new Button("Kiezen")),
+                    new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sixes", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sum", "12", "0", new Button("Kiezen")),
+                    new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Three of a kind", "16", "0", new Button("Kiezen")),
+                    new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Full house", "25", "0", new Button("Kiezen")),
+                    new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Chanche", "16", "0", new Button("Kiezen")),
+                    new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Total", "37", "0", new Button("Kiezen"))
+            ));
+
         }else if(DobbelsteenModel.count == 4) {
+
+            model.setScore(18);
+            view.setTableData(FXCollections.observableArrayList(
+                    new GameView.TableData("Ones", "2", "0", new Button("Kiezen")),
+                    new GameView.TableData("Twos", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Threes", "3", "0", new Button("Kiezen")),
+                    new GameView.TableData("Fours", "4", "0", new Button("Kiezen")),
+                    new GameView.TableData("Fives", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sixes", "6", "0", new Button("Kiezen")),
+                    new GameView.TableData("Sum", "14", "0", new Button("Kiezen")),
+                    new GameView.TableData("Bonus", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Three of a kind", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Four of a kind", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Full house", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Small straight", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Large straight", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Chanche", "15", "0", new Button("Kiezen")),
+                    new GameView.TableData("Yahtzee", "0", "0", new Button("Kiezen")),
+                    new GameView.TableData("Total", "39", "0", new Button("Kiezen"))
+            ));
 
         }else if(DobbelsteenModel.count == 5 ){
 

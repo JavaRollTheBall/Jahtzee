@@ -14,6 +14,7 @@ public class OptionsView extends VBox {
 
     private Button geluidsButton;
     private Button helderheidsButton;
+    private Button vorig;
 
 
 
@@ -26,8 +27,13 @@ public class OptionsView extends VBox {
     private void InitialiseNodes() {
         geluidsButton = new Button("Geluid");
         helderheidsButton = new Button("Helderheid");
+        vorig = new Button("Vorig");
 
 
+    }
+
+    public Button getVorig() {
+        return vorig;
     }
 
     private void Layoutnodes() {
@@ -41,7 +47,7 @@ public class OptionsView extends VBox {
         helderheidsButton.setPrefSize(100.0, 20.0);
 
 
-        this.getChildren().addAll(geluidsButton, helderheidsButton);
+        this.getChildren().addAll(geluidsButton, helderheidsButton, vorig);
     }
 
 
